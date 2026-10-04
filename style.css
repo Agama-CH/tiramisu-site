@@ -35,6 +35,17 @@ main { max-width: 880px; margin: 0 auto; padding: 8px 24px 48px; }
   font-weight: 600; text-decoration: none;
 }
 .store:hover { background: var(--cocoa); color: var(--mascarpone); }
+.shots {
+  display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;
+  margin: 28px -24px 8px; padding: 8px 24px 18px;
+}
+.shots figure { flex: 0 0 220px; margin: 0; scroll-snap-align: center; text-align: center; }
+.shots img {
+  width: 100%; height: auto; display: block; border-radius: 26px; border: 7px solid var(--espresso);
+  box-shadow: 0 10px 28px rgba(74, 44, 42, .22); background: var(--mascarpone);
+}
+.shots figcaption { margin-top: 10px; font-size: 15px; font-weight: 600; color: var(--coffee); }
+@media (min-width: 900px) { .shots { justify-content: center; overflow-x: visible; margin: 28px -120px 8px; } .shots figure { flex-basis: 196px; } }
 .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 32px 0; }
 .card { background: var(--cream); border-radius: 18px; padding: 20px 22px; }
 .card h3 { margin: 0 0 6px; color: var(--cocoa); font-size: 18px; }
@@ -73,5 +84,7 @@ footer a { margin-right: 16px; }
   td:first-child { color: var(--mascarpone); }
   td + td::before { color: var(--caramel); }
   .badge, .store { background: var(--caramel); color: var(--espresso); }
+  .shots img { border-color: #3a2622; }
+  .shots figcaption { color: var(--cream); }
   .store:hover { background: var(--mascarpone); color: var(--espresso); }
 }
